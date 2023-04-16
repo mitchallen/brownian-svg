@@ -1,5 +1,6 @@
 /**
- * Author: Mitch Allen
+ * Author: Mitch Allen (https://mitchallen.com)
+ * https://scriptable.com/
  * Repo: brownian-svg
  * File: index.js
  */
@@ -30,7 +31,7 @@ function generate(limit) {
         ) {
             x = +tx.toFixed(precision)
             y = +ty.toFixed(precision)
-             path += `${x} ${y} `
+            path += `${x} ${y} `
         }    
     }
 
