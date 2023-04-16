@@ -27,6 +27,7 @@ So be sure to close it before running the open command a second time.
 mkdir brownian-svg
 cd brownian-svg
 npm init -y
+touch LICENSE
 touch README.md
 touch .gitignore
 touch index.js
