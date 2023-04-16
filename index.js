@@ -20,15 +20,18 @@ function generate(limit, color) {
     // generate the path
 
     for (let i = 0; i < limit; i++) {
-        let tx = x + Math.random() * maxMove * (Math.random() - 0.5) * 2
-        let ty = y + Math.random() * maxMove * (Math.random() - 0.5) * 2
-        if (tx > margin && tx < (width - margin)) {
+        let distance = Math.random() * maxMove
+        let angle = Math.random() * 360
+        let tx = x + distance * Math.sin(Math.PI / 180 * angle);
+        let ty = y + distance * Math.cos(Math.PI / 180 * angle);
+        if (
+            tx > margin && tx < (width - margin) &&
+            ty > margin && ty < (height - margin)
+        ) {
             x = +tx.toFixed(precision)
-        }
-        if (ty > margin && ty < (height - margin)) {
             y = +ty.toFixed(precision)
-        }
-        path += `${x} ${y} `
+             path += `${x} ${y} `
+        }    
     }
 
     // genate the svg markup
@@ -41,10 +44,10 @@ function generate(limit, color) {
         height
     );
 
-    fd += util.format(`<rect fill="gray" width="%d" height="%d" />`, width, height )
+    fd += util.format(`<rect fill="gray" width="%d" height="%d" />\n`, width, height )
 
     fd += util.format(
-        ' <path fill="none" stroke="#000000" stroke-width="2" d="%s" />\n',
+        '<path fill="none" stroke="#000000" stroke-width="2" d="%s" />\n',
         path
     );
 
@@ -62,4 +65,4 @@ function generate(limit, color) {
 
 }
 
-generate(1000)
+generate(2000)
