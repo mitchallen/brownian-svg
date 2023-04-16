@@ -45,14 +45,11 @@ function generate(limit) {
         width, 
         height
     );
-
     fd += util.format(`<rect fill="gray" width="%d" height="%d" />\n`, width, height )
-
     fd += util.format(
         '<path fill="none" stroke="#000000" stroke-width="2" d="%s" />\n',
         path
     );
-
     fd += '</svg>';
 
     // write the file
@@ -61,9 +58,7 @@ function generate(limit) {
     var stream = fs.createWriteStream(filename);
     stream.write(fd);
     stream.end();
-
     console.log(`Generated file: ${filename}` )
-
 }
 
 generate(2000)
