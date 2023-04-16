@@ -7,7 +7,7 @@
 var fs = require('fs'),
     util = require('util');
 
-function generate(limit, color) {
+function generate(limit) {
 
     let width = height = 1000
     let margin = 10
