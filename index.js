@@ -10,7 +10,8 @@ var fs = require('fs'),
 
 function generate(limit) {
 
-    let width = height = 1000
+    let width = 1024
+    let height = 512
     let margin = 10
     let maxMove = width * 0.10
     let x = width / 2
