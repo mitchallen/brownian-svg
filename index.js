@@ -60,7 +60,6 @@ function generate(limit) {
     var filename = 'brownian.svg';
     var stream = fs.createWriteStream(filename);
     stream.write(fd);
-    // stream.close();  // would randomly gen bad descriptor message
     stream.end();
 
     console.log(`Generated file: ${filename}` )
