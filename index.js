@@ -40,10 +40,8 @@ function generate(limit) {
 
     let fd = util.format(
         '<svg viewBox="0 0 %d %d" xmlns="http://www.w3.org/2000/svg" width="%d" height="%d">\n', 
-        width,
-        height,
-        width, 
-        height
+        width, height,
+        width, height
     );
     fd += util.format(`<rect fill="gray" width="%d" height="%d" />\n`, width, height )
     fd += util.format(
