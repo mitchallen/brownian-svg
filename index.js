@@ -35,7 +35,7 @@ function generate(limit) {
         }    
     }
 
-    // genate the svg markup
+    // generate the svg markup
 
     let fd = util.format(
         '<svg viewBox="0 0 %d %d" xmlns="http://www.w3.org/2000/svg" width="%d" height="%d">\n', 
