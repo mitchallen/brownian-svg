@@ -3,6 +3,8 @@ brownian-svg
 Example generating a brownian motion svg
 --
 
+![brownian motion](brownian.svg)
+
 ## Usage
 
 ```sh
