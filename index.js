@@ -5,8 +5,7 @@
  * File: index.js
  */
 
-var fs = require('fs'),
-    util = require('util');
+var fs = require('fs');
 
 function generate(limit) {
 
@@ -18,6 +17,7 @@ function generate(limit) {
     let y = height / 2
     let precision = 0
     let path = "M"
+    let backgroundColor = "gray"
 
     // generate the path
 
@@ -38,16 +38,11 @@ function generate(limit) {
 
     // generate the svg markup
 
-    let fd = util.format(
-        '<svg viewBox="0 0 %d %d" xmlns="http://www.w3.org/2000/svg" width="%d" height="%d">\n', 
-        width, height,
-        width, height
-    );
-    fd += util.format(`<rect fill="gray" width="%d" height="%d" />\n`, width, height )
-    fd += util.format(
-        '<path fill="none" stroke="#000000" stroke-width="2" d="%s" />\n',
-        path
-    );
+    let xmlns = "http://www.w3.org/2000/svg"
+
+    let fd = `<svg viewBox="0 0 ${width} ${height}" xmlns="${xmlns}" width="${width}" height="${height}">\n`; 
+    fd += `<rect fill="${backgroundColor}" width="${width}" height="${height}" />\n`
+    fd += `<path fill="none" stroke="#000000" stroke-width="2" d="${path}" />\n`
     fd += '</svg>';
 
     // write the file
